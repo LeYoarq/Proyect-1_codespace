@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/test.css">
+</head>
+<body>
+    <form action="/<% if (editing == false){%>add-response<% } else{ %>actualiza/<%= datos.id%>" <% } %> method="post">
+    <!-- prueba -->
+            <div class="jumbotron text-center">
+            <h1>Lucidity</h1> 
+            <p>Las habilidades blandas o Soft Skills juegan un papel fundamental en los puestos de responsabilidad en el sector IT. ¿Cuáles son los más importantes para tu rol? ó ¿El qué te gustaría conseguir?
+                </p> 
+            </div>
+    <!-- cerrar prueba-->
+        <div class="jumbotron text-center">
+            <p>Ingresar Datos: </p>       
+                <div class="input-group">
+                    <div><input type= "text" name="name" value="<% if (editing) { %><%= datos.name %><% } %>"> Nombre</div>
+                    <br></br>
+                    <div><input type="text" name="lastname" value="<% if (editing) { %><%= datos.lastname %><% } %>"> Apellido</div>
+                    <br></br>
+                    <div><input type="text" name="email" value="<% if (editing) { %><%= datos.email %><% } %>"> Correo electronico</div>
+                    <br></br>
+                    <div><input type="text" name="edad" value="<% if (editing) { %><%= datos.edad %><% } %>"> Edad</div>
+                    <br></br>
+                    </div>
+                </div>
+        </div>
+
+        <h2>Conteste las opciones 1 si no esta en nada deacuerdo y 4 si esta muy de acuerdo</h2>
+        <div class="radio">
+            <label for="res_1">1. Soy una persona creativa y me intereso por las novedades que surgen.</label>
+            <input type="radio" name="res_1" value="1" <% if (editing && datos.res_1 == 1) { %>checked<% } %>>1 
+            <input type="radio" name="res_1" value="2" <% if (editing && datos.res_1 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_1" value="3" <% if (editing && datos.res_1 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_1" value="4" <% if (editing && datos.res_1 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_2">2. Prefiero estabilidad y equilibrio a sufrir los cambios del entorno.</label>
+            <input type="radio" name="res_2" value="1" <% if (editing && datos.res_2 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_2" value="2" <% if (editing && datos.res_2 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_2" value="3" <% if (editing && datos.res_2 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_2" value="4" <% if (editing && datos.res_2 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_3">3. Suelo cuestionar las reglas, supuestos o estructuras establecidas.</label>
+            <input type="radio" name="res_3" value="1" <% if (editing && datos.res_3 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_3" value="2" <% if (editing && datos.res_3 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_3" value="3" <% if (editing && datos.res_3 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_3" value="4" <% if (editing && datos.res_3 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_4">4. Suelo encontrar soluciones que otros miembros de mi equipo no ven.</label>
+            <input type="radio" name="res_4" value="1" <% if (editing && datos.res_4 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_4" value="2" <% if (editing && datos.res_4 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_4" value="3" <% if (editing && datos.res_4 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_4" value="4" <% if (editing && datos.res_4 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_5">5. Tengo un flujo constante de ideas pero hay muchas de ellas que no termino de llevarlas a cabo.</label>
+            <input type="radio" name="res_5" value="1" <% if (editing && datos.res_5 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_5" value="2" <% if (editing && datos.res_5 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_5" value="3" <% if (editing && datos.res_5 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_5" value="4" <% if (editing && datos.res_5 == 4) { %>checked<% } %>>4   
+            <br></br>
+            <label for="res_6">6. Soy una persona abierta, flexible y generosa.</label>
+            <input type="radio" name="res_6" value="1" <% if (editing && datos.res_6 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_6" value="2" <% if (editing && datos.res_6 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_6" value="3" <% if (editing && datos.res_6 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_6" value="4" <% if (editing && datos.res_6 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_7">7. Prefiero trabajar en compañía de otros.</label>
+            <input type="radio" name="res_7" value="1" <% if (editing && datos.res_7 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_7" value="2" <% if (editing && datos.res_7 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_7" value="3" <% if (editing && datos.res_7 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_7" value="4" <% if (editing && datos.res_7 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_8">8. Las personas de mi alrededor suelen aceptar y seguir mis ideas y opiniones.</label>
+            <input type="radio" name="res_8" value="1" <% if (editing && datos.res_8 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_8" value="2" <% if (editing && datos.res_8 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_8" value="3" <% if (editing && datos.res_8 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_8" value="4" <% if (editing && datos.res_8 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_9">9. Me considero una persona de principios sólidos.</label>
+            <input type="radio" name="res_9" value="1" <% if (editing && datos.res_9 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_9" value="2" <% if (editing && datos.res_9 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_9" value="3" <% if (editing && datos.res_9 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_9" value="4" <% if (editing && datos.res_9 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_10">10. Me gusta motivar a los que me rodean.</label>
+            <input type="radio" name="res_10" value="1" <% if (editing && datos.res_10 == 1) { %>checked<% } %>>1 
+            <input type="radio" name="res_10" value="2" <% if (editing && datos.res_10 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_10" value="3" <% if (editing && datos.res_10 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_10" value="4" <% if (editing && datos.res_10 == 4) { %>checked<% } %>>4  
+            <br></br>
+            <label for="res_11">11. Me gusta escuchar sugerencias o consejos de otros profesionales.</label>
+            <input type="radio" name="res_11" value="1" <% if (editing && datos.res_11 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_11" value="2" <% if (editing && datos.res_11 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_11" value="3" <% if (editing && datos.res_11 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_11" value="4" <% if (editing && datos.res_11 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_12">12.  A la hora de comunicarme con otras personas utilizo un lenguaje accesible y me adapto a su nivel de interlocución.</label>
+            <input type="radio" name="res_12" value="1" <% if (editing && datos.res_12 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_12" value="2" <% if (editing && datos.res_12 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_12" value="3" <% if (editing && datos.res_12 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_12" value="4" <% if (editing && datos.res_12 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_13">13. Trato de hacer lo que pueda para evitar tensiones inútiles.</label>
+            <input type="radio" name="res_13" value="1" <% if (editing && datos.res_13 == 1) { %>checked<% } %>>4
+            <input type="radio" name="res_13" value="2" <% if (editing && datos.res_13 == 2) { %>checked<% } %>>4
+            <input type="radio" name="res_13" value="3" <% if (editing && datos.res_13 == 3) { %>checked<% } %>>4
+            <input type="radio" name="res_13" value="4" <% if (editing && datos.res_13 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_14">14. Soy decidido para lograr mis objetivos individuales.</label>
+            <input type="radio" name="res_14" value="1" <% if (editing && datos.res_14 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_14" value="2" <% if (editing && datos.res_14 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_14" value="3" <% if (editing && datos.res_14 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_14" value="4" <% if (editing && datos.res_14 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_15">15. Hay oportunidades en que dejo que otros asuman la responsabilidad para resolver el problema.</label>
+            <input type="radio" name="res_15" value="1" <% if (editing && datos.res_15 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_15" value="2" <% if (editing && datos.res_15 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_15" value="3" <% if (editing && datos.res_15 == 2) { %>checked<% } %>>3
+            <input type="radio" name="res_15" value="4" <% if (editing && datos.res_15 == 4) { %>checked<% } %>>4 
+            <br></br>
+            <label for="res_16">16. Intento postponer un problema hasta que he tenido tiempo de pensarlo otra vez.</label>
+            <input type="radio" name="res_16" value="1" <% if (editing && datos.res_16 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_16" value="2" <% if (editing && datos.res_16 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_16" value="3" <% if (editing && datos.res_16 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_16" value="4" <% if (editing && datos.res_16 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_17">17. Prefiero asumir funciones o actividades variadas que no requieren un análisis profundo de la situación.</label>
+            <input type="radio" name="res_17" value="1" <% if (editing && datos.res_17 == 1) { %>checked<% } %>>1 
+            <input type="radio" name="res_17" value="2" <% if (editing && datos.res_17 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_17" value="3" <% if (editing && datos.res_17 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_17" value="4" <% if (editing && datos.res_17 == 4) { %>checked<% } %>>4 
+            <br></br>
+            <label for="res_18">18. Intento conseguir todo lo quye concierne a la solución de un problema, inmediatamente después de que se plantea.</label>
+            <input type="radio" name="res_18" value="1" <% if (editing && datos.res_18 == 1) { %>checked<% } %>>1 
+            <input type="radio" name="res_18" value="2" <% if (editing && datos.res_18 == 2) { %>checked<% } %>>2 
+            <input type="radio" name="res_18" value="3" <% if (editing && datos.res_18 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_18" value="4" <% if (editing && datos.res_18 == 4) { %>checked<% } %>>4 
+            <br></br>
+            <label for="res_19">19. Suelo instruir a otras personas en mi área de expertise.</label>
+            <input type="radio" name="res_19" value="1" <% if (editing && datos.res_19 == 1) { %>checked<% } %>>1
+            <input type="radio" name="res_19" value="2" <% if (editing && datos.res_19 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_19" value="3" <% if (editing && datos.res_19 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_19" value="4" <% if (editing && datos.res_19 == 4) { %>checked<% } %>>4
+            <br></br>
+            <label for="res_20">20.Estoy interesado en ideas abstractas.</label>
+            <input type="radio" name="res_20" value="1" <% if (editing && datos.res_20 == 1) { %>checked<% } %>>1 
+            <input type="radio" name="res_20" value="2" <% if (editing && datos.res_20 == 2) { %>checked<% } %>>2
+            <input type="radio" name="res_20" value="3" <% if (editing && datos.res_20 == 3) { %>checked<% } %>>3
+            <input type="radio" name="res_20" value="4" <% if (editing && datos.res_20 == 4) { %>checked<% } %>>4
+        </div>
+
+            <div><input type="submit" value="Submit"></div>
+            <div><input type="reset"></div>
+       
+    </form>
+</body>
+</html>

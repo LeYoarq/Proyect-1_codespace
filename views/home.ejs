@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/test.css">
+</head>
+
+<body>
+
+    <button><a href="/add-response">Contestar test</a></button>
+    <% if (respuestas.length > 0) { %>
+        <div class="grid">
+            <% for (respuesta of respuestas) { console.log(respuesta)  %>
+            <div class="result">
+                <h2 class="name">Nombre: <%= respuesta.name %></h2>
+                <h2 class="lastname">Apellido: <%= respuesta.lastname %></h2>
+                <h2 class="email">Correo Electronico: <%= respuesta.email %></h2>
+                <h2 class="edad">Edad: <%= respuesta.edad %></h2>
+                <form method="POST" action="/delete/<%= respuesta.id%>"><button type="submit" value="Borrar respuesta">Borrar respuesta</button></form>
+                <br></br>
+                <a href="/actualiza/<%= respuesta.id%>"><button type="submit" value="actualiza">Actualizar</button></a>
+            </div>
+            <% } %>
+        </div>
+            <% } else { %>
+        <h1>No encontramos sus respuestas!</h1>
+    <% } %>
+</main>
+
+</body>
+</html>

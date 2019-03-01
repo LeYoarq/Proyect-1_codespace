@@ -1,0 +1,37 @@
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #959ca0;
+}
+
+p {
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: justify;
+    color: #ffff;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #959ca0;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.jumbotron {
+    background-color: #959ca0;
+    color: #fff;
+    padding: 10px 10px;
+    font-family: Montserrat, sans-serif;
+}
+
+.radio{
+    text-align: justify;
+   
+}
+
+
+
